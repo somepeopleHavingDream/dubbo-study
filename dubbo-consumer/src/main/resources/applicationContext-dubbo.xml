@@ -8,18 +8,18 @@
             http://dubbo.apache.org/schema/dubbo
             http://dubbo.apache.org/schema/dubbo/dubbo.xsd">
 
-    <!-- 提供方应用信息，用于计算依赖关系,name可以随便起名，但是不能重复 -->
+    <!-- 提供方应用信息，用于计算依赖关系，name 可以随便起名，但是不能重复 -->
     <dubbo:application name="hello-world-consumer">
-        <!-- qos默认开启，为了不与producer端口冲突，需要修改此内容 -->
+        <!-- qos 默认开启，为了不与 producer 端口冲突，需要修改此内容 -->
         <dubbo:parameter key="qos.enable" value="true"/>
         <dubbo:parameter key="qos.accept.foreign.ip" value="false"/>
         <dubbo:parameter key="qos.port" value="33333"/>
     </dubbo:application>
 
-    <!-- 使用zookeeper为注册中心，客户端使用curator -->
+    <!-- 使用 zookeeper 为注册中心，客户端使用 curator -->
     <dubbo:registry address="zookeeper://localhost:2181" client="curator"/>
 
-    <!-- 调用远程Producer的服务 -->
+    <!-- 调用远程 Producer 的服务 -->
     <dubbo:reference id="producerService"
                      interface="org.yangxin.dubbo.service.HelloServiceAPI"/>
 </beans>
