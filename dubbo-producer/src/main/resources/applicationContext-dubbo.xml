@@ -8,10 +8,10 @@
             http://dubbo.apache.org/schema/dubbo
             https://dubbo.apache.org/schema/dubbo/dubbo.xsd">
 
-    <!-- 提供方应用信息，用于计算依赖关系,name可以随便起名，但是不能重复 -->
+    <!-- 提供方应用信息，用于计算依赖关系， name 可以随便起名，但是不能重复 -->
     <dubbo:application name="hello-world-producer"/>
 
-    <!-- 使用zookeeper为注册中心，客户端使用curator -->
+    <!-- 使用 zookeeper 为注册中心，客户端使用 curator -->
     <dubbo:registry address="zookeeper://localhost:2181" client="curator"/>
 
     <dubbo:service id="producerService"
